@@ -78,7 +78,7 @@ $GLOBALS['TL_DCA']['tl_ds_login_popups'] = array
     // Palettes
     'palettes' => array
     (
-        'default' => '{details_legend},name,singleSRC;{publish_legend},published;',
+        'default' => '{details_legend},name,singleSRC,link;{publish_legend},published;',
     ),
 
     // Fields
@@ -106,6 +106,14 @@ $GLOBALS['TL_DCA']['tl_ds_login_popups'] = array
             'inputType'               => 'fileTree',
             'eval'                    => array('filesOnly'=>true, 'fieldType'=>'radio', 'mandatory'=>true, 'tl_class'=>'clr'),
             'sql'                     => "binary(16) NULL"
+        ),
+        'link' => array
+        (
+            'exclude'                 => true,
+            'search'                  => true,
+            'inputType'               => 'text',
+            'eval'                    => array('rgxp' => 'url', 'maxlength' => 255, 'tl_class'=>'clr'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'published' => array
         (

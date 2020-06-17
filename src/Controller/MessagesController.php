@@ -40,7 +40,7 @@ class MessagesController extends AbstractController
     {
         $domain = Input::get('domain');
 
-        $popUpUrl = null;
+        $popup = null;
 
         if($domain)
         {
@@ -53,7 +53,7 @@ class MessagesController extends AbstractController
 
             if($popupCache->isHit())
             {
-                $popUpUrl = $popupCache->get();
+                $popup = $popupCache->get();
             }
             else
             {
@@ -65,6 +65,11 @@ class MessagesController extends AbstractController
                 {
                     $objPopUp = DsLoginPopupsModel::findByPk($objClient->popup);
 
+                    $popup = [
+                        'img'  => '',
+                        'link' => $objPopUp->link
+                    ];
+
                     if($objPopUp AND $objPopUp->published)
                     {
                         $rootDir = $this->container->getParameter('kernel.project_dir');
@@ -73,9 +78,9 @@ class MessagesController extends AbstractController
 
                         if(!is_null($objFile) AND is_file($rootDir.'/'.$objFile->path))
                         {
-                            $popUpUrl = Environment::get('url').'/'.$objFile->path;
+                            $popup['img'] = Environment::get('url').'/'.$objFile->path;
 
-                            $popupCache->set($popUpUrl);
+                            $popupCache->set($popup);
                             $cache->save($popupCache);
                         }
                     }
@@ -83,7 +88,7 @@ class MessagesController extends AbstractController
             }
         }
 
-        return $popUpUrl;
+        return $popup;
     }
 
     /**
