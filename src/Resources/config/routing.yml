@@ -1,0 +1,6 @@
+doublespark.custom-login-manager.messages.v1:
+    path: /clm/v1.0/messages
+    defaults:
+        _scope: frontend
+        _token_check: false
+        _controller: Doublespark\ContaoCustomLoginManagerBundle\Controller\MessagesController::handleGetMessages

@@ -1,0 +1,24 @@
+{
+  "name": "doublespark/contao-custom-login-manager-bundle",
+  "type": "ds-contao-bundle",
+  "description": "Manage custom login screen messaging & pop-ups",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jamie Devine",
+      "homepage": "https://www.doublespark.co.uk"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "contao/core-bundle": "^4.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Doublespark\\ContaoCustomLoginManagerBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "Doublespark\\ContaoCustomLoginManagerBundle\\ContaoManager\\Plugin"
+  }
+}

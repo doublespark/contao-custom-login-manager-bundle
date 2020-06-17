@@ -1,0 +1,16 @@
+services:
+    doublespark.custom-login-manager.popups-cache:
+      class: Symfony\Component\Cache\Adapter\FilesystemAdapter
+      arguments:
+        - 'clm.popups'
+        - '0'
+        - '%kernel.cache_dir%'
+      public: true
+
+    doublespark.custom-login-manager.messages-cache:
+      class: Symfony\Component\Cache\Adapter\FilesystemAdapter
+      arguments:
+        - 'clm.messages'
+        - '0'
+        - '%kernel.cache_dir%'
+      public: true
