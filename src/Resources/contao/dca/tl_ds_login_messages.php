@@ -15,6 +15,9 @@ $GLOBALS['TL_DCA']['tl_ds_login_messages'] = array
         ),
         'onsubmit_callback' => [
             ['tl_ds_login_messages', 'clearCache']
+        ],
+        'onsubmit_delete' => [
+            ['tl_ds_login_messages', 'clearCache']
         ]
     ),
 
