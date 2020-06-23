@@ -34,6 +34,7 @@ $GLOBALS['TL_DCA']['tl_ds_login_clients'] = array
         (
             'fields'                  => array('name'),
             'format'                  => '%s',
+            'label_callback'          => array('tl_ds_login_clients', 'getRowLabel')
         ),
         'global_operations' => array
         (
@@ -125,5 +126,29 @@ class tl_ds_login_clients extends Contao\Backend
     {
         $cache = \Contao\System::getContainer()->get('doublespark.custom-login-manager.popups-cache');
         $cache->clear();
+    }
+
+    /**
+     * Get the label
+     * @param $arrItem
+     * @return string
+     */
+    public function getRowLabel($arrItem)
+    {
+        $popUpId = $arrItem['popup'];
+
+        $popUp = ' <span style="color:#CCC;">- No pop-up</span>';
+
+        if(!empty($popUpId))
+        {
+            $objPopup = \Doublespark\ContaoCustomLoginManagerBundle\Models\DsLoginPopupsModel::findByPk($popUpId);
+
+            if($objPopup)
+            {
+                $popUp = ' <span style="color:#CCC;">- '.$objPopup->name.'</span>';
+            }
+        }
+
+        return $arrItem['name'].$popUp;
     }
 }
