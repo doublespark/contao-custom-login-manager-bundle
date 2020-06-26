@@ -10,6 +10,7 @@ use Contao\Model;
  * @property integer $id
  * @property integer $tstamp
  * @property string  $singleSRC
+ * @property integer $maxWidth
  * @property bool    $published
  *
  * @method static DsLoginPopupsModel|null findById($id, array $opt=array())

@@ -66,8 +66,9 @@ class MessagesController extends AbstractController
                     $objPopUp = DsLoginPopupsModel::findByPk($objClient->popup);
 
                     $popup = [
-                        'img'  => '',
-                        'link' => $objPopUp->link
+                        'img'   => '',
+                        'link'  => $objPopUp->link,
+                        'width' => (int)$objPopUp->maxWidth
                     ];
 
                     if($objPopUp AND $objPopUp->published)

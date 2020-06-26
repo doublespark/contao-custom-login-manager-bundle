@@ -6,6 +6,7 @@
 $GLOBALS['TL_LANG']['tl_ds_login_popups']['name']      = ['Name','The name of this pop-up for the Contao backend.'];
 $GLOBALS['TL_LANG']['tl_ds_login_popups']['singleSRC'] = ['Image','The pop-up image.'];
 $GLOBALS['TL_LANG']['tl_ds_login_popups']['link']      = ['URL','The URL that this pop-up should link to.'];
+$GLOBALS['TL_LANG']['tl_ds_login_popups']['maxWidth']  = ['Maximum width','The maximum width of the pop-up.'];
 $GLOBALS['TL_LANG']['tl_ds_login_popups']['published'] = ['Published','Tick to enable this pop-up.'];
 /**
  * Legends
