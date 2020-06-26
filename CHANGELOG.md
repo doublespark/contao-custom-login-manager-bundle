@@ -1,5 +1,10 @@
 Change log
 ==========
+Version 1.0.3 (2020-06-26)
+--------------------------
+### Updated
+- Added maxWidth field to pop-ups to allow width to be set from manager
+
 Version 1.0.2 (2020-06-23)
 --------------------------
 ### Updated
